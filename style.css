@@ -1,0 +1,106 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.header {
+    
+    height: 50px;
+    display: flex;
+    
+
+}
+
+.raw {
+    display: inline;
+}
+
+.logo_kma {
+    padding-left: 20px;
+    height: 70px;
+}
+
+.text {
+   align-items: center;
+}
+
+.header_text {
+    text-align: center;
+    margin: 25px;
+    color: #3366FF;
+    font-size: 20px;
+    font-weight: 700;
+    font-family:  Arial;
+}
+
+.btn {
+    margin-left: 700px;
+    margin-top: 25px;
+}
+.btn_login {
+    padding: 12px;
+    border: solid;
+    color: aliceblue;
+    background-color: #3366FF;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.btn_login:hover {
+    opacity: 0.7;
+}
+
+.slider {
+    height: 500px;
+}
+
+.title_text {
+    margin: 50px;
+    background-color: #F8F8FF;
+    text-align: center;
+    padding: 5px;
+    width: auto;
+    
+}
+
+.main_text {
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: 500px;
+}
+
+.main_table {
+    
+    margin: auto;
+    border-collapse: collapse; 
+    font-family: Arial;
+    width: 50%;
+    
+}
+
+.main_table, td,th {
+    border: 1px solid #DCDCDC;
+}
+
+td,th {
+    padding: 10px 10px;
+}
+
+thead th {
+    text-align: left;
+}
+
+.row_table {
+    background-color: #F8F8FF;
+}
+
+
+.last_text {
+    margin-left: 385px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: arial;
+    line-height: 1.4;
+    
+}
