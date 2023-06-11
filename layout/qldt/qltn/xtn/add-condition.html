@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Thêm điều kiện xét tốt nghiệp - Quản Lý Sinh Viên Mật Mã</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link href="../../../img/logoico.png" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f172ccfa7a.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="../../../css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="../../../index.html" class="navbar-brand mx-3 mb-3">
+                    <h3 class="text-primary navbar-brand-name">Quản Lý Sinh Viên</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="../../../img/male.png" alt=""
+                            style="width: 40px; height: 40px" />
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Văn Hoàng Phúc</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="../../../index.html" class="nav-item nav-link">
+                        <i class="fa fa-tachometer-alt me-2"></i>Trang Chủ</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-user-graduate"></i>Quản lý học viên</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="../../../qlsv/hs/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                &nbsp;Hồ sơ</a>
+                            <a href="../../../qlsv/bc/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-calendar-days"></i>&nbsp;Báo cáo thống kê</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-person"></i>Quản lý đào tạo</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="../../qld/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                &nbsp;Quản lý điểm</a>
+                            <a href="../../qlm/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                &nbsp;Quản lý môn học</a>
+                            <a href="../../qlgv/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                &nbsp;Quản lý giảng viên</a>
+                            <a href="../../xlhv/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-calendar-days"></i>&nbsp;Xử lý học vụ</a>
+                            <a href="../../qltn/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-list"></i>&nbsp;Xét duyệt tốt nghiệp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="../../../index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0">
+                        <img src="../../../img/logoico.png" alt="logo" />
+                    </h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search" />
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="../../../img/male.png" alt=""
+                                style="width: 40px; height: 40px" />
+                            <span class="d-none d-lg-inline-flex">Văn Hoàng Phúc</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Section Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded h-50 p-4">
+                    <h3 class="mb-5">Thêm điều kiện xét tốt nghiệp</h3>
+                    <div class="row">
+                        <div class="col-lg-7 col-sm-7 col-xs-7 border" style="min-height: 1000px;">
+                            <strong class="mb-3">Tiêu chí xét duyệt</strong>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4"><select class="form-select" id="bank">
+                                        <option value="0" selected="selected">100</option>
+                                        <option value="A">80</option>
+                                        <option value="B">70</option>
+                                    </select></div>
+                                <div class="col-lg-4">
+                                    <select class="form-select" id="bank">
+                                        <option value="0" selected="selected">%</option>
+                                        <option value="A">tín chỉ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6 col-sm-6 col-xs-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="checkBox" value="option1">
+                                        <label class="form-check-label" for="checkBox">Tích luỹ 100%</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-xs-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="checkBox" value="option1">
+                                        <label class="form-check-label" for="checkBox">Môn tính điểm</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Học kỳ</label>
+                                        <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                            autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <label for="bank" class="form-label">Các môn</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0">Chọn</option>
+                                            <option value="A">CN</option>
+                                            <option value="B">CN</option>
+                                            <option value="C">CN</option>
+                                            <option value="D">CN</option>
+                                            <option value="E">CN</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Điểm TK</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="bank_id" class="form-label">Điểm</label>
+                                    <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="gender">Hệ 4</label>
+                                        <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="1" checked="" />
+                                            <label class="form-check-label" for="gender">
+                                                TBC
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="0" />
+                                            <label class="form-check-label" for="gender">
+                                                TBTL
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Điểm TK</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="bank_id" class="form-label">Điểm</label>
+                                    <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="gender">Hệ 10</label>
+                                        <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="1" checked="" />
+                                            <label class="form-check-label" for="gender">
+                                                TBC
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="0" />
+                                            <label class="form-check-label" for="gender">
+                                                TBTL
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Chuẩn đầu ra TA</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Chứng chỉ GDQP</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Chứng chỉ GDTC</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Văn bằng TN CQ</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Xét làm đồ án TN</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                            value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Xét thi TN</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border">
+                                <div class="col-lg-6">
+                                    <p>Học phí</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Hoàn thành</label>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border">
+                                <div class="col-lg-4">
+                                    <p>Thời gian học</p>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Không vượt quá quy
+                                        định</label>
+                                </div>
+                            </div>
+                            <p>Điều kiện khối kiến thức:</p>
+                            <div class="row mb-3">
+                                <p>Khối lượng hoàn thành:</p>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" autocomplete="off" />
+                                </div>
+                                <div class="col-lg-4">
+                                    <select class="form-select" id="code">
+                                        <option value="0">Chọn khối</option>
+                                        <option value="A">AT</option>
+                                        <option value="B">DT</option>
+                                        <option value="C">CT</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-primary">Bỏ chọn</button>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Đăng ký học</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Có điểm</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                    value="option3">
+                                <label class="form-check-label" for="inlineRadio3">Tích luỹ</label>
+                            </div>
+                            <p>Điều kiện môn học:</p>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Một môn</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Toàn bộ</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1">>=</div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" autocomplete="off" />
+                                </div>
+                                <div class="col-lg-3">
+                                    <select class="form-select" id="code">
+                                        <option value="0">Chọn môn</option>
+                                        <option value="A">AT</option>
+                                        <option value="B">DT</option>
+                                        <option value="C">CT</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="btn btn-primary">Bỏ chọn</button>
+                                </div>
+                            </div>
+                            <div class="row mb-3 border">
+                                <div class="col-lg-4">
+                                    <p>Môn chuyên ngành</p>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Không thi lại</label>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Điểm môn chuyên đề</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="bank_id" class="form-label">Điểm</label>
+                                    <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                        autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Số ĐVHT nợ</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="bank_id" class="form-label">Đơn vị</label>
+                                    <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                        autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group mb-3">
+                                        <label for="bank_id" class="form-label">Số học phần nợ</label>
+                                        <select class="form-select" id="bank">
+                                            <option value="0" selected="selected">>=</option>
+                                            <option value="A">=</option>
+                                            <option value="B">></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="bank_id" class="form-label">Đơn vị</label>
+                                    <input type="text" class="form-control" id="bank_id" name="bank_id"
+                                        autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-5 col-xs-5 border" style="min-height: 1000px;">
+                            <h5>Danh sách điều kiện xét duyệt</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-center">
+                                    <thead>
+                                        <th>STT</th>
+                                        <td style="width: 80%">Điều kiện</td>
+                                        <td>Chọn</td>
+
+                                    </thead>
+                                    <tbody>
+                                        <th>
+                                            1
+                                        </th>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab similique
+                                            obcaecati magni doloribus, inventore assumenda voluptates voluptate
+                                            aspernatur quo repellat iure molestiae. </td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                                value="option1"></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section End -->
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 text-center">
+                            &copy; <a href="#">Site Name</a>, All Right Reserved.
+                        </div>
+                        <div class="col-12 col-lg-4 text-center">Designed By <a href="#">Laravel Team</a></div>
+                        <div class="col-12 col-lg-4 text-center">
+                            <a href="#">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="../../../js/main.js"></script>
+</body>
+
+</html>
